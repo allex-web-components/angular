@@ -1,0 +1,10 @@
+{
+  "js": {
+    "lib" : [
+      "src/BasicAngularController.js"
+    ]
+  },
+  "protoboard": {
+    "role": "web_component"
+  }
+}

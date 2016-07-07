@@ -1,0 +1,19 @@
+{
+  "name": "allex__web_angularcomponent",
+  "homepage": "https://github.com/allex-web-components/angular",
+  "authors": [
+    "Veljko Popovic <v.s.popovic@gmail.com>"
+  ],
+  "description": "",
+  "keywords": [
+    "ecosystem:allex"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
