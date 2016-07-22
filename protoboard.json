@@ -1,7 +1,9 @@
 {
   "js": {
     "lib" : [
-      "src/BasicAngularController.js"
+      "src/BasicAngularController.js",
+      "src/index.js",
+      "src/directives/allexAngularValidate.js"
     ]
   },
   "protoboard": {
