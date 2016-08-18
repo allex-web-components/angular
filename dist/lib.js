@@ -97,6 +97,7 @@
 })(ALLEX);
 //samo da te vidim
 angular.module ('allex__web_angularcomponent', []);
+
 //samo da te vidim
 (function (lib, module) {
   'use strict';
@@ -106,11 +107,20 @@ angular.module ('allex__web_angularcomponent', []);
       restrict: 'A',
       require: 'ngModel',
       link: function (scope, el, attrs, ctrl) {
-        if (scope._ctrl.validate) {
-          ctrl.$validators.allexAngularValidate = scope._ctrl.validate.bind(scope._ctrl, el.attr('name'));
-        }else{
-          console.error('Controller has no validate function');
+
+
+        var _ctrl = scope._ctrl;
+
+        while (_ctrl) {
+          if (lib.isFunction (_ctrl.validate)) break;
+          _ctrl = _ctrl.scope.$parent ? _ctrl.scope.$parent._ctrl : undefined;
         }
+
+        if (!_ctrl) {
+          console.error('Unable to find validate function ...');
+          return;
+        }
+        ctrl.$validators.allexAngularValidate = _ctrl.validate.bind(_ctrl, el.attr('name'));
       }
     };
   }]);
