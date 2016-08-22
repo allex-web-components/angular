@@ -125,3 +125,42 @@ angular.module ('allex__web_angularcomponent', []);
     };
   }]);
 })(ALLEX.lib, angular.module ('allex__web_angularcomponent'));
+//samo da te vidim
+(function (lib, module) {
+  'use strict';
+
+  module.filter ('allexJoinFilter', function () {
+
+    function match (key, value_key, item, val) {
+      if (val[key] === item) return val[value_key];
+    }
+
+    function resolve (references, key, val, item) {
+      return lib.traverseConditionally (references, match.bind(null, key, val, item));
+    }
+
+    //try to optimize this input list ...
+    return function (input, join, references, key, val, empty_string) {
+      if (!lib.isArray(input)) return input;
+      var ret = ((!references || !key || !val) ? input : input.map (resolve.bind(null, references, key, val))).join (lib.defined(join) ? join : ',');
+
+      return ret.length === 0 && empty_string ? empty_string : ret;
+    };
+  });
+
+})(ALLEX.lib, angular.module('allex__web_angularcomponent'));
+//samo da te vidim
+(function (lib, module) {
+  'use strict';
+
+  module.filter('allexTranslateFilter', function () {
+    return function (input, remap) {
+      if (!remap) return input;
+
+      if (lib.isFunction (remap)) return remap(input);
+      if (remap.hasOwnProperty(input)) return remap[input];
+      return input;
+    };
+  });
+
+})(ALLEX.lib, angular.module('allex__web_angularcomponent'));

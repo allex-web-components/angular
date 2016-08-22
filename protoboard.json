@@ -3,7 +3,9 @@
     "lib" : [
       "src/BasicAngularController.js",
       "src/index.js",
-      "src/directives/allexAngularValidate.js"
+      "src/directives/allexAngularValidate.js",
+      "src/filters/allexJoinFilter.js",
+      "src/filters/allexTranslateFilter.js"
     ]
   },
   "protoboard": {
