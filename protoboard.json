@@ -6,7 +6,8 @@
       "src/directives/allexAngularValidate.js",
       "src/filters/allexJoinFilter.js",
       "src/filters/allexTranslateFilter.js",
-      "src/filters/allexDateFilter.js"
+      "src/filters/allexDateFilter.js",
+      "src/filters/allexRange.js"
     ]
   },
   "protoboard": {
