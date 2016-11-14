@@ -132,9 +132,7 @@ angular.module ('allex__web_angularcomponent', []);
   module.directive ('allexAngularMatchValidate', [function () {
 
     function checkMatch ($scope, field, ctrl) {
-      var ret = $scope.$eval(field) === ctrl.$viewValue;
-      console.log('will return ',ret);
-      return ret;
+      return $scope.$eval(field) === ctrl.$viewValue;
     }
 
     function doValidate (ctrl) {
