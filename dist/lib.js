@@ -129,6 +129,37 @@ angular.module ('allex__web_angularcomponent', []);
 (function (lib, module) {
   'use strict';
 
+  module.directive ('allexAngularMatchValidate', [function () {
+
+    function checkMatch ($scope, field, ctrl) {
+      var ret = $scope.$eval(field) === ctrl.$viewValue;
+      console.log('will return ',ret);
+      return ret;
+    }
+
+    function doValidate (ctrl) {
+      ctrl.$validate();
+    }
+
+    return {
+      restrict : 'A',
+      require : 'ngModel',
+
+      link : function ($scope, el, attrs, ctrl) {
+        var field = attrs.allexAngularMatchValidate;
+        ctrl.$validators.allexAngularMatchValidate = checkMatch.bind(null, $scope, field, ctrl, $scope);
+        $scope.$watch (field, doValidate.bind(null, ctrl));
+      }
+    };
+  }]);
+
+
+})(ALLEX.lib, angular.module ('allex__web_angularcomponent'));
+
+//samo da te vidim
+(function (lib, module) {
+  'use strict';
+
   module.filter ('allexJoinFilter', function () {
 
     function match (key, value_key, item, val) {
