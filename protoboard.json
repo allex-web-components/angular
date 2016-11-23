@@ -8,7 +8,8 @@
       "src/filters/allexJoinFilter.js",
       "src/filters/allexTranslateFilter.js",
       "src/filters/allexDateFilter.js",
-      "src/filters/allexRange.js"
+      "src/filters/allexRange.js",
+      "src/filters/allexFindAndReplaceFilter.js"
     ]
   },
   "protoboard": {
