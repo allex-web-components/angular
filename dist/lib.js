@@ -155,6 +155,22 @@ angular.module ('allex__web_angularcomponent', []);
 })(ALLEX.lib, angular.module ('allex__web_angularcomponent'));
 
 //samo da te vidim
+(function (lib, module){
+  'use strict';
+
+  module.directive ('allexBootstrapResetPasswordDialog', [function () {
+    return {
+      restrict : 'E',
+      scope : false,
+      replace : true,
+      templateUrl : 'partials/allex__web_angularcomponent/partials/bootstrapResetPasswordDialog.html',
+      link : function ($scope, el, attrs) {
+        console.log('SAMO DA TE VIDIM ...');
+      }
+    };
+  }]);
+})(ALLEX.lib, angular.module ('allex__web_angularcomponent'));
+//samo da te vidim
 (function (lib, module) {
   'use strict';
 
