@@ -11,7 +11,8 @@
       "src/filters/allexDateFilter.js",
       "src/filters/allexRange.js",
       "src/filters/allexFindAndReplaceFilter.js",
-      "src/filters/allexPrependFilter.js"
+      "src/filters/allexPrependFilter.js",
+      "src/filters/allexPercentage.js"
     ]
   },
   "partials" : {
