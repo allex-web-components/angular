@@ -6,6 +6,7 @@
       "src/directives/allexAngularValidate.js",
       "src/directives/allexMatchValidate.js",
       "src/directives/bootstrapResetPasswordDialog.js",
+      "src/directives/allexDatetimePicker.js",
       "src/filters/allexJoinFilter.js",
       "src/filters/allexTranslateFilter.js",
       "src/filters/allexDateFilter.js",
