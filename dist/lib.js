@@ -189,6 +189,26 @@ angular.module ('allex__web_angularcomponent', []);
 (function (lib, module) {
   'use strict';
 
+  function onEvent (el, submitselector, evnt) {
+    console.log('SAMO DA VIDIM SELECTOR ...', submitselector);
+    if (evnt.which !== 13) return;
+    evnt.preventDefault();
+    $(submitselector).click();
+  }
+
+  module.directive ('allexOnEnterSubmit', [function () {
+    return {
+      restrict : 'A',
+      link : function (scope, el, attrs) {
+        el.keypress(onEvent.bind(null, el, attrs.allexOnEnterSubmit));
+      }
+    };
+  }]);
+})(ALLEX.lib, angular.module ('allex__web_angularcomponent'));
+//samo da te vidim
+(function (lib, module) {
+  'use strict';
+
   module.filter ('allexJoinFilter', function () {
 
     function match (key, value_key, item, val) {
