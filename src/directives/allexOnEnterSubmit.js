@@ -4,7 +4,9 @@
   function onEvent (el, submitselector, evnt) {
     if (evnt.which !== 13) return;
     evnt.preventDefault();
-    $(submitselector).click();
+    var $el = $(submitselector);
+    if (!$el.is (':visible') || $el.is(':disabled')) return;
+    $el.click();
   }
 
   module.directive ('allexOnEnterSubmit', [function () {

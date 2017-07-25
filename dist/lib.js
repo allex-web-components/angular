@@ -95,10 +95,10 @@
 
   lib.BasicAngularController = BasicAngularController;
 })(ALLEX);
-//samo da te vidim
+
 angular.module ('allex__web_angularcomponent', []);
 
-//samo da te vidim
+
 (function (lib, module) {
   'use strict';
 
@@ -125,7 +125,7 @@ angular.module ('allex__web_angularcomponent', []);
     };
   }]);
 })(ALLEX.lib, angular.module ('allex__web_angularcomponent'));
-//samo da te vidim
+
 (function (lib, module) {
   'use strict';
 
@@ -154,9 +154,9 @@ angular.module ('allex__web_angularcomponent', []);
 
 })(ALLEX.lib, angular.module ('allex__web_angularcomponent'));
 
-//samo da te vidim
 
-//samo da te vidim
+
+
 (function (lib, module) {
   'use strict';
 
@@ -185,15 +185,16 @@ angular.module ('allex__web_angularcomponent', []);
   }]);
 
 })(ALLEX.lib, angular.module ('allex__web_angularcomponent'));
-//samo da te vidim
+
 (function (lib, module) {
   'use strict';
 
   function onEvent (el, submitselector, evnt) {
-    console.log('SAMO DA VIDIM SELECTOR ...', submitselector);
     if (evnt.which !== 13) return;
     evnt.preventDefault();
-    $(submitselector).click();
+    var $el = $(submitselector);
+    if (!$el.is (':visible') || $el.is(':disabled')) return;
+    $el.click();
   }
 
   module.directive ('allexOnEnterSubmit', [function () {
@@ -205,7 +206,7 @@ angular.module ('allex__web_angularcomponent', []);
     };
   }]);
 })(ALLEX.lib, angular.module ('allex__web_angularcomponent'));
-//samo da te vidim
+
 (function (lib, module) {
   'use strict';
 
@@ -229,7 +230,7 @@ angular.module ('allex__web_angularcomponent', []);
   });
 
 })(ALLEX.lib, angular.module('allex__web_angularcomponent'));
-//samo da te vidim
+
 //NISAM SIGURAN DA LI OVO IGDE KORISTIS ...
 (function (lib, module) {
   'use strict';
@@ -245,7 +246,7 @@ angular.module ('allex__web_angularcomponent', []);
   });
 
 })(ALLEX.lib, angular.module('allex__web_angularcomponent'));
-//samo da te vidim
+
 (function (lib, module) {
   'use strict';
 
@@ -258,7 +259,7 @@ angular.module ('allex__web_angularcomponent', []);
 
 
 })(ALLEX.lib, angular.module('allex__web_angularcomponent'));
-//samo da te vidim
+
 (function (lib, module) {
   'use strict';
   function range (input, start, end, inc){
@@ -275,7 +276,7 @@ angular.module ('allex__web_angularcomponent', []);
   module.filter ('allexRange' , function () { return range; });
 
 })(ALLEX.lib, angular.module('allex__web_angularcomponent'));
-//samo da te vidim
+
 (function (lib, module) {
   'use strict';
 
@@ -291,7 +292,7 @@ angular.module ('allex__web_angularcomponent', []);
     };
   });
 })(ALLEX.lib, angular.module('allex__web_angularcomponent'));
-//samo da te vidim
+
 (function (lib, module) {
   'use strict';
 
@@ -301,7 +302,7 @@ angular.module ('allex__web_angularcomponent', []);
     };
   });
 })(ALLEX.lib, angular.module('allex__web_angularcomponent'));
-//samo da te vidim
+
 (function (lib, module) {
   'use strict';
   module.filter('allexPercentage', ['$filter', function ($filter) {
